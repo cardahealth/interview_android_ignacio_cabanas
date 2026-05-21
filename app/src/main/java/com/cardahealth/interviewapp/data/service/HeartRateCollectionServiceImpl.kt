@@ -1,5 +1,6 @@
 package com.cardahealth.interviewapp.data.service
 
+import com.cardahealth.interviewapp.data.repository.BATTERY_BYTE_INDEX
 import com.cardahealth.interviewapp.domain.service.HeartRateCollectionService
 import com.cardahealth.interviewapp.domain.service.HeartRateCollectionState
 import com.cardahealth.interviewapp.domain.usecase.ReportHeartRateBatchUseCase
@@ -38,8 +39,9 @@ class HeartRateCollectionServiceImpl(
             val buffer = ArrayDeque<Int>(BATCH_SIZE)
             streamHeartRate(sensorId)
                 .onEach { hr ->
-                    buffer.addLast(hr)
-                    _state.value = _state.value.copy(lastHeartRate = hr)
+                    val value = hr.get(BATTERY_BYTE_INDEX).toInt() and 0xFF
+                    buffer.addLast(value)
+                    _state.value = _state.value.copy(lastHeartRate = value)
                     if (buffer.size >= BATCH_SIZE) {
                         val toSend = buffer.toList()
                         buffer.clear()

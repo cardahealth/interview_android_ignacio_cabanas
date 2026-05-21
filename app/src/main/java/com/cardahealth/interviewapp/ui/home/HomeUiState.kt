@@ -1,13 +1,12 @@
 package com.cardahealth.interviewapp.ui.home
 
-import com.cardahealth.interviewapp.domain.model.Sensor
-import com.cardahealth.interviewapp.domain.model.SensorConnectionState
+import com.cardahealth.interviewapp.domain.model.AssignedSensor
+import com.cardahealth.interviewapp.domain.model.ConnectionStatus
+import kotlinx.coroutines.flow.StateFlow
 
 data class HomeUiState(
     val isLoading: Boolean = false,
-    val sensor: Sensor? = null,
-    val connectionState: SensorConnectionState? = null,
-    val lastHeartRate: Int? = null,
-    val batchesSent: Int = 0,
+    val sensors: List<AssignedSensor> = emptyList(),
+    val statuses: Map<String, StateFlow<ConnectionStatus>> = emptyMap(),
     val errorMessage: String? = null,
 )

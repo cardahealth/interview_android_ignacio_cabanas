@@ -3,4 +3,15 @@
     <string name="sensor_state_disconnected">Disconnected</string>
     <string name="sensor_state_connecting">Connecting</string>
     <string name="sensor_state_connected">Connected</string>
+    <string name="sensor_state_error">Connection error</string>
+    <string name="capability_heart_rate">Heart rate</string>
+    <string name="capability_spo2">SpO2</string>
+    <string name="capabilities_label">Capabilities:</string>
+    <string name="assigned_on_format">Assigned on: %1$s</string>
+    <string name="battery_format">Battery: %1$s</string>
+    <string name="battery_unknown">—</string>
+    <string name="connect_button_idle">Connect</string>
+    <string name="connect_button_connecting">Connecting…</string>
+    <string name="connect_button_connected">Connected</string>
+    <string name="retry">Retry</string>
 </resources>
