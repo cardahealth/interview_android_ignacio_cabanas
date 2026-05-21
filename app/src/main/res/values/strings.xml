@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Interview App</string>
+    <string name="sensor_state_disconnected">Disconnected</string>
+    <string name="sensor_state_connecting">Connecting</string>
+    <string name="sensor_state_connected">Connected</string>
 </resources>

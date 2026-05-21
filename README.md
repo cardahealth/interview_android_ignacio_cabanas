@@ -27,8 +27,8 @@ Returns a list of available sensor identifiers.
 ### connect(id: String) method
 Connects to a sensor and returns a flow representing its connection state.
 The returned flow emits an integer state that progresses through three stages:
-- `0` — connecting
-- `1` — authenticating
+- `0` — disconnected
+- `1` — connecting
 - `2` — connected
 
 Throws IllegalArgumentException if no sensor with the given id is connectable.
